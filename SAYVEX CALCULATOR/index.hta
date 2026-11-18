@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="tr"><head>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta charset="utf-8">
+<title>SAYVEX Calculator</title>
+<hta:application id="sayvex" applicationname="SAYVEX Calculator" border="thick" caption="yes" maximizebutton="yes" minimizebutton="yes" showintaskbar="yes" singleinstance="yes" scroll="no" sysmenu="yes" contextmenu="no" selection="no" innerborder="no" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="th-amoled">
+<div id="bg1"></div><div id="bg2"></div><div id="grid"></div>
+<div id="app">
+ <div id="top">
+  <div id="logo">SAYVEX<span>CALC</span></div>
+  <div id="modeInd"><i id="dot"></i><b id="modeName">Standart</b><em id="angInd">DEG</em></div>
+  <div id="nav"></div>
+ </div>
+ <div id="views">
+  <div class="view" id="v-calc">
+   <div id="calcCol">
+    <div id="screen"><div id="prev"></div><div id="cur">0</div></div>
+    <div id="keys"></div>
+   </div>
+   <div id="hist"><div class="hh"><b>Geçmiş</b><button id="hclr" class="mini">Temizle</button></div><div id="hlist"></div></div>
+  </div>
+  <div class="view" id="v-conv"><div class="card wide">
+   <h2>Birim Dönüştürücü</h2>
+   <div class="frow"><label>Kategori</label><select id="c-cat"></select></div>
+   <div class="frow"><label>Değer</label><input id="c-val" type="text" value="1"></div>
+   <div class="frow"><label>Kaynak</label><select id="c-from"></select></div>
+   <div class="frow"><label>Hedef</label><select id="c-to"></select><button id="c-swap" class="mini">⇄ Değiştir</button></div>
+   <div id="c-res" class="big">—</div>
+  </div></div>
+  <div class="view" id="v-stat"><div class="card wide">
+   <h2>İstatistik</h2>
+   <p class="sub">Sayıları boşluk, satır, ; veya virgül ile ayırarak girin (örn: 4 8 15 16 23 42).</p>
+   <textarea id="st-in" rows="4"></textarea>
+   <button id="st-go" class="mini pri">Hesapla</button>
+   <div id="st-out"></div>
+  </div></div>
+  <div class="view" id="v-set"><div class="card wide">
+   <h2>Ayarlar</h2>
+   <div class="frow"><label>Tema</label><select id="s-theme"><option value="dark">Dark</option><option value="amoled">AMOLED</option><option value="light">Light</option></select></div>
+   <div class="frow"><label>Ses efektleri</label><input type="checkbox" id="s-sound"></div>
+   <div class="frow"><label>Animasyonlar</label><input type="checkbox" id="s-anim"></div>
+   <div class="frow"><label>Ondalık basamak</label><select id="s-dec"><option>2</option><option>4</option><option>6</option><option>8</option><option>10</option><option>12</option></select></div>
+   <div class="frow"><label>Açı birimi</label><select id="s-angle"><option value="deg">Derece</option><option value="rad">Radyan</option></select></div>
+   <div class="frow"><label>Binlik ayırıcı</label><select id="s-sep"><option value="none">Yok</option><option value="comma">Virgül (1,234.5)</option><option value="space">Boşluk (1 234.5)</option><option value="dot">Nokta (1.234,5)</option></select></div>
+   <p class="sub" id="s-info"></p>
+  </div></div>
+ </div>
+</div>
+<script src="settings.js" charset="utf-8"></script>
+<script src="calculator-engine.js" charset="utf-8"></script>
+<script src="history.js" charset="utf-8"></script>
+<script src="converter.js" charset="utf-8"></script>
+<script src="script.js" charset="utf-8"></script>
+</body></html>
